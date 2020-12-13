@@ -1,3 +1,12 @@
-.f {
-    color: red
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background: #57FD9D;
+    background: -webkit-linear-gradient(top left, #57FD9D, #7B42F1);
+    background: -moz-linear-gradient(top left, #57FD9D, #7B42F1);
+    background: linear-gradient(to bottom right, #57FD9D, #7B42F1);
+    background-repeat: no-repeat;
+    height: 100vh;
 }
