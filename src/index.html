@@ -21,23 +21,39 @@
         </div>
         <div class="card-body">
           <div id="password-output"></div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">LowerCase Characters</label>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">UpperCase Characters</label>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Numeric Characters</label>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Special Characters</label>
-          </div>
-          <button type="button" class="btn btn-primary" id="password-generator-button">Generate Password</button>
+          <form class="form-horizontal">
+              <div class="form-group row">
+                <label for="passWordLength" class="col-sm-3 col-form-label">Password length: </label>
+                <div class= "col-sm-9">
+                  <input type="number" class="form-control" id="passWordLength" placeholder="8-128">
+                </div>
+              </div>
+              <div class="form-check form-switch">
+                <label class="form-check-label control-label" for="flexSwitchCheckDefault-1">LowerCase
+                  Characters</label>
+                <input class="form-check-input option position-left" id="flexSwitchCheckDefault-1" type="checkbox"
+                  data-toggle-type="lowercase">
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input option" id="flexSwitchCheckDefault-2" type="checkbox"
+                  data-toggle-type="uppercase">
+                <label class="form-check-label control-label" for="flexSwitchCheckDefault-2">UpperCase
+                  Characters</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input option" id="flexSwitchCheckDefault-3" type="checkbox"
+                  data-toggle-type="numeric">
+                <label class="form-check-label control-label" for="flexSwitchCheckDefault-3">Numeric Characters</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input option" id="flexSwitchCheckDefault-4" type="checkbox"
+                  data-toggle-type="special">
+                <label class="form-check-label control-label" for="flexSwitchCheckDefault-4">Special Characters</label>
+              </div>
+              <div class ="form-group">
+                <button type="button" class="btn btn-primary" id="password-generator-button">Generate Password</button>
+              </div>
+          </form>
         </div>
       </div>
     </div>
