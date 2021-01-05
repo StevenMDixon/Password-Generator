@@ -1,4 +1,6 @@
 import './index.css';
+import "@fortawesome/fontawesome-free/js/all.js";
+import "@fortawesome/fontawesome-free/css/all.css";
 import generateRandomCharacter from './randomCharacter';
 
 /*
@@ -7,15 +9,16 @@ import generateRandomCharacter from './randomCharacter';
     Store criteria in variables
     generate password
 */
+
 // store options here
 const options = {
     uppercase: false,
-    lowercase: false,
+    lowercase: true,
     numeric: false,
     special: false
 };
 
-// function used to generate password using a for loop
+// function used to generate password using a for loop 
 function generatePassWord(characters, lengthofPassword){
     let password = '';
     for(let i = 0; i < lengthofPassword; i++){
@@ -39,18 +42,25 @@ function getCharactersNeed(options){
 }
 
 function handleGeneratePasswordClick(e){
-    let PasswordLength =  document.getElementById("passWordLength").value
-    let password = generatePassWord(getCharactersNeed(options), PasswordLength)
-    assignPassword(password);
+    let PasswordLength =  document.getElementById("passWordLength").value;
+    if(PasswordLength >= 8 && PasswordLength <= 128){
+        let password = generatePassWord(getCharactersNeed(options), PasswordLength)
+        assignPassword(password);
+    } else {
+        handleValidationError("Password length must be a number between 8 and 128");
+    }
 }
 
 function handleOptionClick(e){
     if(this.dataset.toggleType){
-        options[this.dataset.toggleType] = this.checked
-
+        options[this.dataset.toggleType] = this.checked;
     }else {
         // handle error
     }
+}
+
+function handleValidationError(error){
+    alert(error)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
